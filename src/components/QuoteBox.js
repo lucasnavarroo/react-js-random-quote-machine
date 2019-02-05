@@ -25,10 +25,10 @@ export default class QuoteBox extends Component {
 
   getRandomQuote = async res => {
     axios
-      .get(quotesUrl)
-      .then(res => {
-        const randomPos = Math.floor(Math.random() * res.data.length);
-        const quote = res.data[randomPos].content;
+    .get(quotesUrl)
+    .then(res => {
+      const randomPos = Math.floor(Math.random() * res.data.length);
+      const quote = res.data[randomPos].content;
         const author = res.data[randomPos].author;
         this.setState({
           quote: quote,
@@ -53,7 +53,7 @@ export default class QuoteBox extends Component {
         justify="center"
         style={{ minHeight: "100vh" }}
       >
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={10} md={8} lg={6} xl={3}>
           <Paper style={style.box} elevation={4} id="quote-box">
             <Typography align="center" variant="h5" gutterBottom id="text">
               {this.state.quote}
